@@ -1,5 +1,5 @@
 {
-  "name": "storybook-addon-kit",
+  "name": "aria-live-storybook-addon",
   "version": "0.0.0",
   "description": "everything you need to build a Storybook addon",
   "keywords": [
@@ -9,9 +9,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/chantastic/aria-live-storybook-addon"
   },
-  "author": "winkerVSbecks",
+  "author": "Michael Chan <mijoch@gmail.com>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
