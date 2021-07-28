@@ -8,30 +8,37 @@ export const RequestDataButton = styled(Button)({
 });
 
 type Results = {
-  danger: any[];
-  warning: any[];
+  changes: any[];
 };
 
 interface PanelContentProps {
   results: Results;
-  fetchData: () => void;
-  clearData: () => void;
 }
 
 /**
  * Checkout https://github.com/storybookjs/storybook/blob/next/addons/jest/src/components/Panel.tsx
  * for a real world example
  */
-export const PanelContent: React.FC<PanelContentProps> = ({
-  results,
-  fetchData,
-  clearData,
-}) => (
+export const PanelContent: React.FC<PanelContentProps> = ({ results }) => (
   <TabsState
-    initial="overview"
+    initial="polite"
     backgroundColor={convert(themes.normal).background.hoverable}
   >
     <div
+      id="polite"
+      title={`${results.changes.length} Polite`}
+      color={convert(themes.normal).color.warning}
+    >
+      <List items={results.changes} />
+    </div>
+    <div
+      id="assertive"
+      title={`0 Assertive`}
+      color={convert(themes.normal).color.negative}
+    >
+      {/* <List items={results.changes} /> */}
+    </div>
+    {/* <div
       id="overview"
       title="Overview"
       color={convert(themes.normal).color.positive}
@@ -57,20 +64,6 @@ export const PanelContent: React.FC<PanelContentProps> = ({
           </RequestDataButton>
         </Fragment>
       </Placeholder>
-    </div>
-    <div
-      id="danger"
-      title={`${results.danger.length} Danger`}
-      color={convert(themes.normal).color.negative}
-    >
-      <List items={results.danger} />
-    </div>
-    <div
-      id="warning"
-      title={`${results.warning.length} Warning`}
-      color={convert(themes.normal).color.warning}
-    >
-      <List items={results.warning} />
-    </div>
+    </div> */}
   </TabsState>
 );

@@ -1,46 +1,57 @@
+import * as React from "react";
 import { StoryFn as StoryFunction, useChannel } from "@storybook/addons";
 import { STORY_CHANGED } from "@storybook/core-events";
 import { EVENTS } from "./constants";
 
-export const withRoundTrip = (storyFn: StoryFunction) => {
-  const emit = useChannel({
-    [EVENTS.REQUEST]: () => {
-      emit(EVENTS.RESULT, {
-        danger: [
-          {
-            title: "Panels are the most common type of addon in the ecosystem",
-            description:
-              "For example the official @storybook/actions and @storybook/a11y use this pattern",
-          },
-          {
-            title:
-              "You can specify a custom title for your addon panel and have full control over what content it renders",
-            description:
-              "@storybook/components offers components to help you addons with the look and feel of Storybook itself",
-          },
-        ],
-        warning: [
-          {
-            title:
-              'This tabbed UI pattern is a popular option to display "test" reports.',
-            description:
-              "It's used by @storybook/addon-jest and @storybook/addon-a11y. @storybook/components offers this and other components to help you quickly build an addon",
-          },
-        ],
-      });
-    },
-    [STORY_CHANGED]: () => {
-      emit(EVENTS.RESULT, {
-        danger: [],
-        warning: [],
-      });
-    },
-    [EVENTS.CLEAR]: () => {
-      emit(EVENTS.RESULT, {
-        danger: [],
-        warning: [],
-      });
-    },
+interface ChangeOptions {
+  text: string;
+  assertiveness: "polite" | "assertive";
+}
+
+function createChange(options: ChangeOptions) {
+  let now = new Date();
+  let time = now.toLocaleDateString(navigator.language, {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
   });
+
+  return { ...options, time };
+}
+
+export const withRoundTrip = (storyFn: StoryFunction) => {
+  const emit = useChannel({});
+
+  React.useEffect(() => {
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        let assertiveness = mutation.target?.getAttribute("aria-live"); // use TS appropriate way to gather attribute
+
+        if (mutation.type !== "childList") return;
+
+        if (mutation.addedNodes.length) {
+          emit(
+            EVENTS.ADD_CHANGE,
+            createChange({ text: mutation.target.textContent, assertiveness })
+          );
+        }
+      }
+    });
+
+    let politeAriaLiveRegion = document.querySelector("[aria-live='polite']");
+
+    if (politeAriaLiveRegion) {
+      observer.observe(politeAriaLiveRegion, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+      });
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  });
+
   return storyFn();
 };

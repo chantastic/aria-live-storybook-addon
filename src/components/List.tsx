@@ -52,8 +52,9 @@ const Description = styled.div({
 });
 
 type Item = {
-  title: string;
-  description: string;
+  text: string;
+  time: string;
+  assertiveness: string;
 };
 
 interface ListItemProps {
@@ -62,6 +63,7 @@ interface ListItemProps {
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {
   const [open, onToggle] = useState(false);
+  console.log(item);
 
   return (
     <Fragment>
@@ -74,10 +76,14 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
               transform: `rotate(${open ? 0 : -90}deg)`,
             }}
           />
-          {item.title}
+          {item.text}
         </HeaderBar>
       </Wrapper>
-      {open ? <Description>{item.description}</Description> : null}
+      {open ? (
+        <Description>
+          {item.assertiveness}, at {item.time}
+        </Description>
+      ) : null}
     </Fragment>
   );
 };
