@@ -1,6 +1,6 @@
 {
   "name": "aria-live-storybook-addon",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Observe and log aria-live region changes in the addon panel",
   "keywords": [
     "storybook-addons",
