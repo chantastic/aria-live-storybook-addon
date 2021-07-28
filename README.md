@@ -1,4 +1,11 @@
-# Storybook Addon Kit
+# Aria Live Storybook Addon
+
+## Links
+
+- [Storybook](https://chan.dev/aria-live-storybook-addon)
+- [Chromatic](https://www.chromatic.com/library?appId=6101739561d37e00498163d5)
+
+---
 
 Simplify the creation of Storybook addons
 
