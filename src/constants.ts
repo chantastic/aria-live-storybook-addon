@@ -4,5 +4,5 @@ export const PARAM_KEY = `myAddonParameter`;
 
 export const EVENTS = {
   ADD_CHANGE: `${ADDON_ID}/add_change`,
-  // CLEAR: `${ADDON_ID}/clear`,
+  CLEAR: `${ADDON_ID}/clear`,
 };
