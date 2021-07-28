@@ -24,7 +24,9 @@ export const withRoundTrip = (storyFn: StoryFunction) => {
   React.useEffect(() => {
     const observer = new MutationObserver((mutationsList) => {
       for (const mutation of mutationsList) {
-        let assertiveness = mutation.target?.getAttribute("aria-live"); // use TS appropriate way to gather attribute
+        // @ts-ignore
+        // use TS appropriate way to gather attribute
+        let assertiveness = mutation.target?.getAttribute("aria-live");
 
         if (mutation.type !== "childList") return;
 

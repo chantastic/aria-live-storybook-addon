@@ -10,7 +10,9 @@ interface PanelProps {
 }
 
 const INITIAL_STATE = {
-  changes: [], // TODO: add typing
+  // @ts-ignore
+  // TODO: add typing
+  changes: [],
 };
 
 interface State {
