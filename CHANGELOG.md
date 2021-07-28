@@ -1,5 +1,9 @@
 # v0.0.2 (Wed Jul 28 2021)
 
+_Failed first publish. Published directly_
+
+# v0.0.1 (Wed Jul 28 2021)
+
 #### ⚠️ Pushed to `main`
 
 - Temporarily surpress TS errors for first publish ([@chantastic](https://github.com/chantastic))
