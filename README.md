@@ -2,6 +2,8 @@
 
 Debugging [ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) is cumbersome. Validating that live regions are connected should be easy, automatic, and available right in the story.
 
+<img width="1131" alt="Screen Shot 2021-07-28 at 12 21 46 PM" src="https://user-images.githubusercontent.com/658360/127384288-177a3f13-99b3-4541-8e22-bd9495f17e7a.png">
+
 ## Getting started
 
 First, install the addon.
