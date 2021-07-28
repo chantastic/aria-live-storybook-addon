@@ -1,11 +1,10 @@
 import * as React from "react";
 import { StoryFn as StoryFunction, useChannel } from "@storybook/addons";
-import { STORY_CHANGED } from "@storybook/core-events";
 import { EVENTS } from "./constants";
 
 interface ChangeOptions {
   text: string;
-  assertiveness: "polite" | "assertive";
+  assertiveness: "polite" | "assertive"; // TODO: remove duplication in withRoundTrip.js
 }
 
 function createChange(options: ChangeOptions) {

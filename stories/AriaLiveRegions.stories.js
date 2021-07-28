@@ -37,8 +37,8 @@ const Template = (args) => <Subject {...args} />;
 export const Simple = Template.bind({});
 Simple.args = {};
 
-// export const SmallAppSetup = Template.bind({});
-// SmallAppSetup.args = {};
+export const SmallAppSetup = Template.bind({});
+SmallAppSetup.args = {};
 
 // export const LargeAppSetup = Template.bind({});
 // LargeAppSetup.args = {};
