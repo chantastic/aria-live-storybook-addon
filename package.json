@@ -1,11 +1,14 @@
 {
   "name": "aria-live-storybook-addon",
   "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "description": "Observe and log aria-live region changes in the addon panel",
   "keywords": [
     "storybook-addons",
     "style",
-    "test"
+    "test",
+    "a11y",
+    "aria",
+    "aria-live"
   ],
   "repository": {
     "type": "git",
@@ -83,7 +86,7 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Aria Live Regions",
     "supportedFrameworks": [
       "react",
       "vue",
