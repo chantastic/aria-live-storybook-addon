@@ -19,26 +19,35 @@ interface PanelContentProps {
  * Checkout https://github.com/storybookjs/storybook/blob/next/addons/jest/src/components/Panel.tsx
  * for a real world example
  */
-export const PanelContent: React.FC<PanelContentProps> = ({ results }) => (
-  <TabsState
-    initial="polite"
-    backgroundColor={convert(themes.normal).background.hoverable}
-  >
-    <div
-      id="polite"
-      title={`${results.changes.length} Polite`}
-      color={convert(themes.normal).color.warning}
+export const PanelContent: React.FC<PanelContentProps> = ({ results }) => {
+  const politeChanges = results.changes.filter(
+    (change) => change.assertiveness === "polite"
+  );
+
+  // const assertiveChanges = results.changes.filter(
+  //   (change) => change.assertiveness === "assertive"
+  // );
+
+  return (
+    <TabsState
+      initial="polite"
+      backgroundColor={convert(themes.normal).background.hoverable}
     >
-      <List items={results.changes} />
-    </div>
-    <div
-      id="assertive"
-      title={`0 Assertive`}
-      color={convert(themes.normal).color.negative}
-    >
-      {/* <List items={results.changes} /> */}
-    </div>
-    {/* <div
+      <div
+        id="polite"
+        title={`${politeChanges.length} Polite`}
+        color={convert(themes.normal).color.warning}
+      >
+        <List items={politeChanges} />
+      </div>
+      <div
+        id="assertive"
+        title={`0 Assertive`}
+        color={convert(themes.normal).color.negative}
+      >
+        <List items={[]} />
+      </div>
+      {/* <div
       id="overview"
       title="Overview"
       color={convert(themes.normal).color.positive}
@@ -65,5 +74,6 @@ export const PanelContent: React.FC<PanelContentProps> = ({ results }) => (
         </Fragment>
       </Placeholder>
     </div> */}
-  </TabsState>
-);
+    </TabsState>
+  );
+};
