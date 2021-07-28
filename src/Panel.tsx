@@ -1,7 +1,7 @@
 import React from "react";
-import { useAddonState, useChannel } from "@storybook/api";
+import { useChannel } from "@storybook/api";
 import { AddonPanel } from "@storybook/components";
-import { ADDON_ID, EVENTS } from "./constants";
+import { EVENTS } from "./constants";
 import { PanelContent } from "./components/PanelContent";
 import { STORY_CHANGED } from "@storybook/core-events";
 
@@ -37,9 +37,6 @@ function liveRegionChangesReducer(state: State, action: Action) {
 }
 
 export const Panel: React.FC<PanelProps> = (props) => {
-  // https://storybook.js.org/docs/react/addons/addons-api#useaddonstate
-  // const [results, setState] = useAddonState(ADDON_ID, INITIAL_STATE);
-
   const [ariaLiveRegionChanges, dispatchAriaLiveRegionCange] = React.useReducer(
     liveRegionChangesReducer,
     INITIAL_STATE

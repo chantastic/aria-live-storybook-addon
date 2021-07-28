@@ -38,9 +38,19 @@ export const withRoundTrip = (storyFn: StoryFunction) => {
     });
 
     let politeAriaLiveRegion = document.querySelector("[aria-live='polite']");
+    let assertiveAriaLiveRegion = document.querySelector(
+      "[aria-live='assertive']"
+    );
 
     if (politeAriaLiveRegion) {
       observer.observe(politeAriaLiveRegion, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+      });
+    }
+    if (assertiveAriaLiveRegion) {
+      observer.observe(assertiveAriaLiveRegion, {
         childList: true,
         subtree: true,
         attributes: true,

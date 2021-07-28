@@ -63,7 +63,6 @@ interface ListItemProps {
 
 export const ListItem: React.FC<ListItemProps> = ({ item }) => {
   const [open, onToggle] = useState(false);
-  console.log(item);
 
   return (
     <Fragment>
@@ -79,11 +78,7 @@ export const ListItem: React.FC<ListItemProps> = ({ item }) => {
           {item.text}
         </HeaderBar>
       </Wrapper>
-      {open ? (
-        <Description>
-          {item.assertiveness}, at {item.time}
-        </Description>
-      ) : null}
+      {open ? <Description>Announced at: {item.time}</Description> : null}
     </Fragment>
   );
 };
