@@ -4,7 +4,6 @@ import { useAriaLive, PoliteAriaLive, AssertiveAriaLive } from "use-aria-live";
 function Subject(props) {
   let [politeAnnouncement, announcePolitely] = useAriaLive();
   let [assertiveAnnouncement, announceAssertively] = useAriaLive();
-
   return (
     <>
       <p>
@@ -53,14 +52,9 @@ export default {
   title: "AriaLiveRegion",
   component: Subject,
 };
-
-const Template = (args) => <Subject {...args} />;
-
-export const Simple = Template.bind({});
-Simple.args = {};
-
-export const SmallAppSetup = Template.bind({});
-SmallAppSetup.args = {};
-
-// export const LargeAppSetup = Template.bind({});
-// LargeAppSetup.args = {};
+export const Simple = {
+  args: {},
+};
+export const SmallAppSetup = {
+  args: {},
+};
