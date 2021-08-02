@@ -1,7 +1,7 @@
 import React from "react";
 import { useAriaLive, PoliteAriaLive } from "use-aria-live";
 
-export default function TodoAppExmaple() {
+export default function SimpleAppExmaple() {
   let [announcement, announce] = useAriaLive();
   let [todos, updateTodos] = React.useState([]);
 
