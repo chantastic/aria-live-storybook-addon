@@ -1,11 +1,10 @@
-import React from "react";
 import MinimalExample from "./minimal-example";
 
 import userEvent from "@testing-library/user-event";
-import { screen, waitFor } from "@testing-library/dom";
+import { screen } from "@testing-library/dom";
 
 export default {
-  title: "AriaLiveRegion/Minimal Example",
+  title: "ARIA live regions/Minimal Example",
   component: MinimalExample,
 };
 
