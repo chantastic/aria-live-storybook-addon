@@ -1,3 +1,16 @@
+# v0.0.3 (Mon Aug 02 2021)
+
+#### ⚠️ Pushed to `main`
+
+- add examples with logs thru Play functions ([@chantastic](https://github.com/chantastic))
+- Enabled Component Story Format 3.0 and update with codemod ([@chantastic](https://github.com/chantastic))
+
+#### Authors: 1
+
+- Michael Chan ([@chantastic](https://github.com/chantastic))
+
+---
+
 # v0.0.2 (Wed Jul 28 2021)
 
 _Failed first publish. Published directly_
