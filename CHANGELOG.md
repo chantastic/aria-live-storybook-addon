@@ -1,3 +1,15 @@
+# v0.0.4 (Mon Aug 02 2021)
+
+#### ⚠️ Pushed to `main`
+
+- Add basic Todo to demonstrate use inside of a small app ([@chantastic](https://github.com/chantastic))
+
+#### Authors: 1
+
+- Michael Chan ([@chantastic](https://github.com/chantastic))
+
+---
+
 # v0.0.3 (Mon Aug 02 2021)
 
 #### ⚠️ Pushed to `main`
