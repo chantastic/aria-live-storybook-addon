@@ -11,7 +11,7 @@ export default function TodoAppExmaple() {
   }
 
   function removeTodoWithCreatedAt(createdAt) {
-    updateTodos(todos.filter((item) => item.createdAt == createdAt));
+    updateTodos(todos.filter((item) => item.createdAt !== createdAt));
     announce(`Todo removed`);
   }
 
