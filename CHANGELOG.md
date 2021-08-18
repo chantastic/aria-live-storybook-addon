@@ -1,3 +1,15 @@
+# v0.0.6 (Wed Aug 18 2021)
+
+#### 🐛 Bug Fix
+
+- Add some types [#9](https://github.com/chantastic/aria-live-storybook-addon/pull/9) ([@msutkowski](https://github.com/msutkowski))
+
+#### Authors: 1
+
+- Matt Sutkowski ([@msutkowski](https://github.com/msutkowski))
+
+---
+
 # v0.0.5 (Mon Aug 02 2021)
 
 #### ⚠️ Pushed to `main`
